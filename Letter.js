@@ -1,7 +1,7 @@
 var Letter = function(letter, guessed) {
     this.letter = letter;
     this.guessed = guessed;
-    this.display = function() {
+    this.toString = function() {
         if (this.guessed === true) {
             return this.letter
         } else {
@@ -9,9 +9,8 @@ var Letter = function(letter, guessed) {
         }
     }
     this.isSame = function(guess) {
-        guess = guess.toUpperCase();
-        if (letter === guess) {
-            console.log(letter + " is " + guess)
+        // guess = guess.toUpperCase();
+        if (this.letter.toUpperCase() === guess.toUpperCase()) {
             this.guessed = true;
         }
     }
